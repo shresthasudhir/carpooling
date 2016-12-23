@@ -1,0 +1,77 @@
+@CHARSET "UTF-8";
+
+.useremail {
+	text-transform: lowercase;
+}
+
+.postDiv {
+	margin: 0 auto;
+	width: 50%;
+}
+
+.lblCheckBox{
+	display: inline;
+}
+
+.txtBoxPost {
+	resize: none;
+}
+
+.postNavContainer {
+	margin: 0 auto;
+	width: 50%;
+	min-height: 400px;
+}
+
+.active {
+	background: #f4f1e3 !important;
+}
+
+.offeredPost {
+	/*  border: 1px solid black; */
+	border-top: 1px solid white;
+}
+
+.txtBoxComment {
+	resize: none;
+}
+
+.commentBoxPost {
+	margin: 0 auto;
+	width: 90%;
+}
+
+.txtBoxComment {
+	border: 3px solid #f4f1e3;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	width: 100%;
+	color: #606060;
+	padding: 1em;
+	margin-bottom: 1.5em;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+
+.commentForm {
+	width: 100%;
+	padding: 15px 0;
+	float: left;
+	position: relative;
+	cursor: pointer;
+	font-size: 15px;
+	text-align: center;
+	color: #fff;
+	margin-bottom: 3%;
+	line-height: normal;
+}
+
+.offererName{
+	display:inline;
+}
+
+.deletePost{
+	float:right;
+}

@@ -1,0 +1,62 @@
+package wap.carpooling.controller;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.google.gson.Gson;
+
+import wap.carpooling.helper.CommentHelper;
+
+/**
+ * Servlet implementation class GetComment
+ */
+@WebServlet("/GetComment")
+public class GetComment extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public GetComment() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		//doGet(request, response);
+		response.setContentType("application/json");
+		PrintWriter out=response.getWriter();
+		CommentHelper commentHelper = new CommentHelper();
+		
+		int postId = Integer.parseInt(request.getParameter("postId"));
+		
+		try{
+			Gson gson = new Gson();
+			String jsonData = gson.toJson(commentHelper.getPostComment(postId));
+			out.println("{\"JSONDATA4\":"+jsonData+"}");
+			System.out.println("{\"JSONDATA4\":"+jsonData+"}");
+		}
+		catch(Exception ex){
+			System.out.println(ex.toString());
+		}
+	}
+
+}
